@@ -46,10 +46,10 @@ function main(){
 function initVertexBuffers(gl){
   // 设置数据------包括定点坐标和纹理坐标
   var vertics=new Float32Array([
-    -0.5, 0.5, 0.0, 1.0,
-    -0.5, -0.5, 0.0, 0.0,
-    0.5, 0.5, 1.0, 1.0,
-    0.5, -0.5, 1.0, 0.0
+    -0.5, 0.5, -0.3, 1.2,
+    -1.0, -1.0, 0.0, 0.0,
+    1.0, 1.0, 1.0, 1.0,
+    1.0, -1.0, 1.0, 0.0
   ]);
   // 设置点的数目
   var n=4;
@@ -111,7 +111,7 @@ function initTextures(gl,n){
   // 加载图像-----加载完成之后加载纹理
   image.onload = function () { loadTexture(gl, n, textture, u_Sample, image);};
 
-  image.src='sky.JPG';
+  image.src='111.jpg';
   return true
 }
   //加载纹理
