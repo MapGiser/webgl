@@ -37,7 +37,7 @@ function main () {
   var u_ViewMatrix = gl.getUniformLocation(gl.program, 'u_ViewMatrix');
   // 定义视图矩阵并进行赋值
   var viewMatrix = new Matrix4();
-  viewMatrix.setLookAt(0.20, 0.0, 0.25, 0, 0, 0, 0, 1, 0);
+  viewMatrix.setLookAt(-0.2, 0.0, 0.25, 0, 0, -1, 1, 0, 0);
   // 为视图矩阵进行
   gl.uniformMatrix4fv(u_ViewMatrix, false, viewMatrix.elements);
 
@@ -52,17 +52,17 @@ function main () {
 function initVertexBuffers (gl) {
   // 设置数据
   var vertics = new Float32Array([
-    0.0, 0.5, -0.4, 0.4, 1.0, 0.4,//绿色三角形
-    -0.5, -0.5, -0.4, 0.4, 1.0, 0.4,
-    0.5, -0.5, -0.4, 1.0, 0.4, 0.4,
+    0.5, 0.0, -0.4, 0.0,1.0,0.0,//绿色三角形
+    -0.5, 0.0, -0.4, 0.0,1.0,0.0,
+    0.0, 0.5, -0.4, 0.0,1.0,0.0,
 
-    0.0, 0.5, -0.3, 1.0, 0.4, 0.4,//黄色三角形
-    -0.5, -0.5, -0.3, 1.0, 1.0, 0.4,
-    0.0, -0.5, -0.3, 1.0, 1.0, 0.4,
+    0.6, 0.0, -0.3, 0.0, 0.0, 1.0,//黄色三角形
+    -0.6, -0.0, -0.3, 0.0, 0.0, 1.0,
+    -0.1, 0.5, -0.3, 0.0, 0.0, 1.0,
 
-    0.0, 0.5, 0.0, 0.4, 0.4, 1.0,//蓝色三角形
-    -0.5, -0.5, 0.0, 0.4, 0.4, 1.0,
-    0.5, -0.5, 0.0, 1.0, 0.4, 0.4
+    0.7, 0.0, 0.0, 0.4, 0.0, 0.0,//蓝色三角形
+    -0.7, -0.0, 0.0, 0.4, 0.0, 0.0,
+    -0.3, 0.5, 0.0, 0.4, 0.0, 0.0
   ])
   // 设置点的数目
   var n = 9;
@@ -82,7 +82,6 @@ function initVertexBuffers (gl) {
   var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
   if (a_Position < 0) {
     console.log('Failed to get the storage location of a position');
-    return a_Position;
   }
   // 将数据写入缓冲区对象中
   gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, FSIZE * 3, 0);
@@ -91,7 +90,6 @@ function initVertexBuffers (gl) {
   var a_Color = gl.getAttribLocation(gl.program, 'a_Color');
   if (a_Color < 0) {
     console.log('Failed to get the storage location of a position');
-    return a_Color;
   }
   // 将数据写入缓冲区对象中
   gl.vertexAttribPointer(a_Color, 2, gl.FLOAT, false, FSIZE * 3, FSIZE * 3);
