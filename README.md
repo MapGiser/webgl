@@ -10,5 +10,5 @@
 ![Image text](http://raw.github.com/MapGiser/webgl/master/images/a.jpg)
 <br>
 二、<H4>动态变化点的大小</H4>
-1、随时间变化的圆点的半斤大小，根据时间变量，动态变化圆形点的半径
+1、随时间变化的圆点的半斤大小，根据时间变量，动态变化圆形点的半径<br>
 ![image](http://raw.github.com/MapGiser/webgl/master/images//pointScale.gif)
