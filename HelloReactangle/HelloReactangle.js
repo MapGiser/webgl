@@ -33,17 +33,18 @@ function main(){
   // 清空canvas元素
   gl.clear(gl.COLOR_BUFFER_BIT);
   // 绘制三角形，其中n=3
-  gl.drawArrays(gl.TRIANGLE_STRIP,0,n);
+  gl.drawArrays(gl.TRIANGLES,0,n);
 
 }
 // 创建缓冲区并写入数据
 function initVertexBuffers(gl){
   // 设置数据
   var vertics=new Float32Array([
-    -0.5,0.5,-0.5,-0.5,0.5,-0.5,0.5,0.5
+    -0.5,0.5,-0.5,-0.5,0.5,-0.5,
+    0.5,-0.5,0.5,0.5,-0.5,0.5
   ]);
   // 设置点的数目
-  var n=4;
+  var n=6;
   // 创建缓冲区对象
   var vertexBuffer=gl.createBuffer();
   if(!vertexBuffer){
